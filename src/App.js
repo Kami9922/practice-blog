@@ -3,13 +3,14 @@ import './App.css'
 import styled from 'styled-components'
 import { Header } from './components/header/header'
 import { Footer } from './components/footer/footer'
+import { Authorization } from './pages/authorization/authorization'
 
 const Content = styled.div`
 	padding: 120px 0;
 `
-const H2 = styled.h2`
-	text-align: center;
-`
+// const H2 = styled.h2`
+// 	text-align: center;
+// `
 const AppColumn = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -25,7 +26,6 @@ const App = () => {
 		<AppColumn>
 			<Header />
 			<Content>
-				<H2>Контент Страницы</H2>
 				<Routes>
 					<Route
 						path='/'
@@ -33,7 +33,7 @@ const App = () => {
 					/>
 					<Route
 						path='/login'
-						element={<div>Авторизация</div>}
+						element={<Authorization />}
 					/>
 					<Route
 						path='/register'

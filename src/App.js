@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Header } from './components/header/header'
 import { Footer } from './components/footer/footer'
 import { Authorization } from './pages/authorization/authorization'
+import { Registration } from './pages/registration/registration'
 
 const Content = styled.div`
 	padding: 120px 0;
@@ -37,7 +38,7 @@ const App = () => {
 					/>
 					<Route
 						path='/register'
-						element={<div>Регистрация</div>}
+						element={<Registration />}
 					/>
 					<Route
 						path='/users'

@@ -1,46 +1,18 @@
 {
   "users": [
     {
-      "id": "001",
-      "login": "qwe",
-      "password": "qweasd",
-      "registed_at": "09.09.2024",
-      "role_id": 0
+      "login": "Ivan4",
+      "password": "123456",
+      "registered_at": "1970-01-31 18:46",
+      "role_id": 0,
+      "id": "fQIFz_q"
     },
     {
       "login": "Ivan",
       "password": "qwerty",
-      "registed_at": "1970-01-26 09:06",
-      "role_id": 2,
+      "registered_at": "1970-01-26 09:06",
+      "role_id": 1,
       "id": "NxWzJ-p"
-    },
-    {
-      "login": "qwer",
-      "password": "qwerty",
-      "registed_at": "1970-01-26 03:49",
-      "role_id": 2,
-      "id": "Tqad1yO"
-    },
-    {
-      "login": "Jhon",
-      "password": "123456",
-      "registed_at": "1970-01-31 00:30",
-      "role_id": 2,
-      "id": "Uuti0nw"
-    },
-    {
-      "login": "Ivan3",
-      "password": "qweasd",
-      "registed_at": "1970-02-02 18:09",
-      "role_id": 2,
-      "id": "COv4CBI"
-    },
-    {
-      "login": "Ivan4",
-      "password": "123456",
-      "registed_at": "1970-01-31 18:46",
-      "role_id": 2,
-      "id": "fQIFz_q"
     }
   ],
   "roles": [

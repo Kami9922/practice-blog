@@ -114,6 +114,7 @@ export const Authorization = styled(AuthorizationContainer)`
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+
 	& > form {
 		width: 260px;
 		display: flex;

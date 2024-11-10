@@ -5,8 +5,9 @@ import { Header } from './components/header/header'
 import { Footer } from './components/footer/footer'
 import { Authorization } from './pages/authorization/authorization'
 import { Registration } from './pages/registration/registration'
+import { Users } from './pages/users/users'
 
-const Content = styled.div`
+const Page = styled.div`
 	padding: 120px 0;
 `
 // const H2 = styled.h2`
@@ -26,7 +27,7 @@ const App = () => {
 	return (
 		<AppColumn>
 			<Header />
-			<Content>
+			<Page>
 				<Routes>
 					<Route
 						path='/'
@@ -42,7 +43,7 @@ const App = () => {
 					/>
 					<Route
 						path='/users'
-						element={<div>Пользователи</div>}
+						element={<Users />}
 					/>
 					<Route
 						path='/post'
@@ -57,7 +58,7 @@ const App = () => {
 						element={<div>Ошибка</div>}
 					/>
 				</Routes>
-			</Content>
+			</Page>
 			<Footer />
 		</AppColumn>
 	)

@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectUserRole } from '../../../../selectors/select-user-role'
 import { ROLE } from '../../../../constants/role'
 import { selectUserLogin } from '../../../../selectors/select-user-login'
-import { logoutAction } from '../../../../actions/logoutAction'
+import { logoutAction } from '../../../../actions/logout-action'
 import { selectUserSession } from '../../../../selectors/select-user-session'
 
 const RightAligned = styled.div`

@@ -6,6 +6,7 @@ import { Footer } from './components/footer/footer'
 import { Authorization } from './pages/authorization/authorization'
 import { Registration } from './pages/registration/registration'
 import { Users } from './pages/users/users'
+import { Post } from './pages/post/post'
 
 const Page = styled.div`
 	padding: 120px 0;
@@ -50,8 +51,8 @@ const App = () => {
 						element={<div>Новая статья</div>}
 					/>
 					<Route
-						path='/post/:postId'
-						element={<div>Статья</div>}
+						path='/post/:id'
+						element={<Post />}
 					/>
 					<Route
 						path='*'

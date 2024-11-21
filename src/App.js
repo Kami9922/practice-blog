@@ -7,9 +7,12 @@ import { Authorization } from './pages/authorization/authorization'
 import { Registration } from './pages/registration/registration'
 import { Users } from './pages/users/users'
 import { Post } from './pages/post/post'
+import { useLayoutEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { setUser } from './actions/set-user'
 
 const Page = styled.div`
-	padding: 120px 0;
+	padding: 120px 0 20px;
 `
 // const H2 = styled.h2`
 // 	text-align: center;
@@ -25,6 +28,25 @@ const AppColumn = styled.div`
 `
 
 const App = () => {
+	const dispatch = useDispatch()
+
+	useLayoutEffect(() => {
+		const currentUserDataJSON = sessionStorage.getItem('userData')
+
+		if (!currentUserDataJSON) {
+			return
+		}
+
+		const currentUserData = JSON.parse(currentUserDataJSON)
+
+		dispatch(
+			setUser({
+				...currentUserData,
+				roleId: Number(currentUserData.roleId),
+			})
+		)
+	}, [dispatch])
+
 	return (
 		<AppColumn>
 			<Header />

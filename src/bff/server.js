@@ -1,4 +1,5 @@
 import { updateUserRole } from './api/update-user-role'
+import { addPostComment } from './operations/add-post-comment'
 import { authorize } from './operations/authorize'
 import { fetchPost } from './operations/fetch-post'
 import { fetchRoles } from './operations/fetch-roles'
@@ -16,4 +17,5 @@ export const server = {
 	fetchPost,
 	updateUserRole,
 	removeUser,
+	addPostComment,
 }

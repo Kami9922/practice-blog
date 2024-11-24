@@ -78,6 +78,4 @@ const ControlPanelContainer = ({ className }) => {
 	)
 }
 
-export const ControlPanel = styled(ControlPanelContainer)`
-	// display: flex;
-`
+export const ControlPanel = styled(ControlPanelContainer)``

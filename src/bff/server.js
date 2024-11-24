@@ -10,6 +10,7 @@ import { removePostComment } from './operations/remove-post-comment'
 import { removeUser } from './operations/remove-user'
 import { updatePost } from './api/update-post'
 import { savePost } from './operations/save-post'
+import { removePost } from './operations/remove-post'
 
 export const server = {
 	register,
@@ -24,4 +25,5 @@ export const server = {
 	removePostComment,
 	updatePost,
 	savePost,
+	removePost,
 }

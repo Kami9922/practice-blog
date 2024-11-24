@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Icon } from '../../../../components/icon/icon'
 import { Input } from '../../../../components/input/input'
 import { SpecialPanel } from '../special-panel/special-panel'
-import { useRef } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import { sanitizeContent } from './utils/sanitize-content'
 import { useDispatch } from 'react-redux'
 import { savePostAsync } from '../../../../actions/save-post-async'
@@ -13,49 +13,55 @@ const PostFormContainer = ({
 	className,
 	post: { id, title, imgUrl, content, publishedAt },
 }) => {
-	const imgRef = useRef(null)
-	const titleRef = useRef(null)
+	const [imgUrlValue, setImgUrlValue] = useState(imgUrl)
+	const [titleValue, setTitleValue] = useState(title)
 	const contentRef = useRef(null)
+
+	useLayoutEffect(() => {
+		setImgUrlValue(imgUrl)
+		setTitleValue(title)
+	}, [imgUrl, title])
 
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
 	const requestServer = useServerRequest()
 
 	const onSave = () => {
-		const newImgUrl = imgRef.current.value
-		const newTitle = titleRef.current.value
 		const newContent = sanitizeContent(contentRef.current.innerHTML)
 
 		dispatch(
 			savePostAsync(requestServer, {
 				id,
-				imgUrl: newImgUrl,
-				title: newTitle,
+				imgUrl: imgUrlValue,
+				title: titleValue,
 				content: newContent,
 			})
-		).then(() => navigate(`/post/${id}`))
+		).then(({ id }) => navigate(`/post/${id}`))
 	}
+
+	const onImgChange = ({ target }) => setImgUrlValue(target.value)
+	const onTitleChange = ({ target }) => setTitleValue(target.value)
 
 	return (
 		<div className={className}>
 			<Input
-				ref={imgRef}
-				defaultValue={imgUrl}
+				value={imgUrlValue}
 				placeholder='Изображение...'
+				onChange={onImgChange}
 			/>
 			<Input
-				ref={titleRef}
-				defaultValue={title}
+				value={titleValue}
 				placeholder='Заголовок...'
+				onChange={onTitleChange}
 			/>
 			<SpecialPanel
+				id={id}
 				publishedAt={publishedAt}
 				margin='20px 0'
 				editButton={
 					<Icon
 						id='fa-floppy-o'
 						size='21px'
-						margin='0px 10px 0px 0px'
 						onClick={onSave}
 					/>
 				}
@@ -80,5 +86,7 @@ export const PostForm = styled(PostFormContainer)`
 	& .post-text {
 		font-size: 18px;
 		white-space: pre-line;
+		min-height: 80px;
+		border: 1px solid #000;
 	}
 `

@@ -1,6 +1,6 @@
+import { selectUserRole } from '../../selectors/select-user-role'
 import { ROLE } from '../constants/role'
 import { sessions } from '../sessions'
-import { setUserRole } from './set-user-role'
 
 export const updateUserRole = async (hash, userId, newUserRoleId) => {
 	const accessRoles = [ROLE.ADMIN]
@@ -14,7 +14,7 @@ export const updateUserRole = async (hash, userId, newUserRoleId) => {
 		}
 	}
 
-	setUserRole(userId, newUserRoleId)
+	selectUserRole(userId, newUserRoleId)
 
 	return {
 		error: null,

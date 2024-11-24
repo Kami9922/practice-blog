@@ -3,7 +3,7 @@ import { ACTION_TYPE } from '../actions/action-type'
 const initialPostState = {
 	id: '',
 	title: '',
-	imageUrl: '',
+	imgUrl: '',
 	content: '',
 	publishedAt: '',
 	comments: [],

@@ -1,4 +1,4 @@
-import { updateUserRole } from './api/update-user-role'
+import { updateUserRole } from './operations/update-user-role'
 import { addPostComment } from './operations/add-post-comment'
 import { authorize } from './operations/authorize'
 import { fetchPost } from './operations/fetch-post'
@@ -8,6 +8,8 @@ import { logout } from './operations/logout'
 import { register } from './operations/register'
 import { removePostComment } from './operations/remove-post-comment'
 import { removeUser } from './operations/remove-user'
+import { updatePost } from './api/update-post'
+import { savePost } from './operations/save-post'
 
 export const server = {
 	register,
@@ -20,4 +22,6 @@ export const server = {
 	removeUser,
 	addPostComment,
 	removePostComment,
+	updatePost,
+	savePost,
 }

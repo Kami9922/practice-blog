@@ -8,9 +8,9 @@ import { logout } from './operations/logout'
 import { register } from './operations/register'
 import { removePostComment } from './operations/remove-post-comment'
 import { removeUser } from './operations/remove-user'
-import { updatePost } from './api/update-post'
 import { savePost } from './operations/save-post'
 import { removePost } from './operations/remove-post'
+import { fetchPosts } from './operations/fetch-posts'
 
 export const server = {
 	register,
@@ -19,11 +19,11 @@ export const server = {
 	fetchUsers,
 	fetchRoles,
 	fetchPost,
+	fetchPosts,
 	updateUserRole,
 	removeUser,
 	addPostComment,
 	removePostComment,
-	updatePost,
 	savePost,
 	removePost,
 }

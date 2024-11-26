@@ -1,5 +1,4 @@
-import { addPost } from '../api/add-post'
-import { updatePost } from '../api/update-post'
+import { addPost, updatePost } from '../api/index'
 import { ROLE } from '../constants/role'
 import { sessions } from '../sessions'
 

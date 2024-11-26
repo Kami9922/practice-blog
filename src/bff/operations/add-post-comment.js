@@ -1,6 +1,4 @@
-import { addComment } from '../api/add-comment'
-import { getComments } from '../api/get-comments'
-import { getPost } from '../api/get-post'
+import { addComment, getComments, getPost } from '../api/index'
 import { ROLE } from '../constants/role'
 import { sessions } from '../sessions'
 

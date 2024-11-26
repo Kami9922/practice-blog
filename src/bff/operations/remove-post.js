@@ -1,6 +1,4 @@
-import { deleteComment } from '../api/delete-comment'
-import { deletePost } from '../api/delete-post'
-import { getComments } from '../api/get-comments'
+import { deleteComment, deletePost, getComments } from '../api/index'
 import { ROLE } from '../constants/role'
 import { sessions } from '../sessions'
 

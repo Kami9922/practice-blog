@@ -1,6 +1,4 @@
-import { getComments } from '../api/get-comments'
-import { getPost } from '../api/get-post'
-import { getUsers } from '../api/get-users'
+import { getComments, getPost, getUsers } from '../api/index'
 
 export const fetchPost = async (postId) => {
 	const post = await getPost(postId)

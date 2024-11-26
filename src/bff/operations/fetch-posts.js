@@ -1,9 +1,11 @@
-import { getPosts } from '../api/get-posts'
-import { getComments } from '../api/get-comments'
+import { getPosts, getComments } from '../api/index'
 import { getCommentsCount } from '../utils/get-comments-count'
 
-export const fetchPosts = async () => {
-	const [posts, comments] = await Promise.all([getPosts(), getComments()])
+export const fetchPosts = async (page, limit) => {
+	const [posts, comments] = await Promise.all([
+		getPosts(page, limit),
+		getComments(),
+	])
 	// const posts = await getPosts()
 	// const comments = await getComments()
 

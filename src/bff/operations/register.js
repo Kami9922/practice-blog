@@ -1,5 +1,4 @@
-import { addUser } from '../api/add-user'
-import { getUser } from '../api/get-user'
+import { addUser, getUser } from '../api/index'
 import { sessions } from '../sessions'
 
 export const register = async (regLogin, regPassword) => {

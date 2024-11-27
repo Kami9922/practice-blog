@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button } from '../../../../components/button/button'
 
-const PaginationContainer = ({ className, page, setPage }) => {
+const PaginationContainer = ({ className, page, lastPage, setPage }) => {
 	return (
 		<div className={className}>
 			<Button
@@ -16,17 +16,28 @@ const PaginationContainer = ({ className, page, setPage }) => {
 				Предыдущая
 			</Button>
 			<div className='current-page'>Страница: {page}</div>
-			<Button onClick={() => setPage(page + 1)}>Следующая</Button>
-			<Button onClick={() => setPage(1)}>В конец</Button>
+			<Button
+				disabled={page === lastPage}
+				onClick={() => setPage(page + 1)}>
+				Следующая
+			</Button>
+			<Button
+				disabled={page === lastPage}
+				onClick={() => setPage(lastPage)}>
+				В конец
+			</Button>
 		</div>
 	)
 }
 
 export const Pagination = styled(PaginationContainer)`
 	display: flex;
+	position: absolute;
 	justify-content: center;
 	margin: 0 0 20px;
 	padding: 0 35px;
+	width: 100%;
+	bottom: 140px;
 
 	& button {
 		margin: 0 5px;

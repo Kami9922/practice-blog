@@ -13,14 +13,9 @@ import { setUser } from './actions/set-user'
 import { Modal } from './components/modal/modal'
 import { Main } from './pages/main/main'
 
-const Page = styled.div`
-	padding: 120px 0 20px;
-`
-// const H2 = styled.h2`
-// 	text-align: center;
-// `
 const AppColumn = styled.div`
 	display: flex;
+	position: relative;
 	flex-direction: column;
 	justify-content: space-between;
 	width: 1000px;
@@ -28,6 +23,12 @@ const AppColumn = styled.div`
 	background-color: #fff;
 	margin: 0 auto;
 `
+const Page = styled.div`
+	padding: 120px 0 20px;
+`
+// const H2 = styled.h2`
+// 	text-align: center;
+// `
 
 const App = () => {
 	const dispatch = useDispatch()

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Icon } from '../../../../components/icon/icon'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const PostCardContainer = ({
 	className,
@@ -79,3 +80,11 @@ export const PostCard = styled(PostCardContainer)`
 		display: flex;
 	}
 `
+
+PostCard.propTypes = {
+	id: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	imgUrl: PropTypes.string.isRequired,
+	publishedAt: PropTypes.string.isRequired,
+	commentsCount: PropTypes.number.isRequired,
+}

@@ -8,6 +8,7 @@ import { useServerRequest } from '../../../../hooks/use-server-request'
 import { addCommentAsync } from '../../../../actions/add-comment-async'
 import { selectUserRole } from '../../../../selectors/select-user-role'
 import { ROLE } from '../../../../constants/role'
+import PropTypes from 'prop-types'
 
 const CommentsContainer = ({ className, comments, postId }) => {
 	const [newComment, setNewComment] = useState('')

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Input } from '../../components/input/input'
 import { Icon } from '../../components/icon/icon'
+import PropTypes from 'prop-types'
 
 const SearchContainer = ({ className, searchPhrase, onChange }) => {
 	return (
@@ -37,3 +38,7 @@ export const Search = styled(SearchContainer)`
 		right: 9px;
 	}
 `
+Search.propTypes = {
+	searchPhrase: PropTypes.string.isRequired,
+	onChange: PropTypes.func.isRequired,
+}

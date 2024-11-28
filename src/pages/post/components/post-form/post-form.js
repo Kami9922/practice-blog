@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 import { savePostAsync } from '../../../../actions/save-post-async'
 import { useNavigate } from 'react-router-dom'
 import { useServerRequest } from '../../../../hooks/use-server-request'
+import PropTypes from 'prop-types'
 
 const PostFormContainer = ({
 	className,

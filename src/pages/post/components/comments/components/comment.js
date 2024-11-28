@@ -7,6 +7,7 @@ import { CLOSE_MODAL } from '../../../../../actions/close-modal'
 import { openModal } from '../../../../../actions/open-modal'
 import { selectUserRole } from '../../../../../selectors/select-user-role'
 import { ROLE } from '../../../../../constants/role'
+import PropTypes from 'prop-types'
 
 const CommentContainer = ({
 	className,

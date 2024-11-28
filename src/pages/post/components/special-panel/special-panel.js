@@ -10,6 +10,7 @@ import { removePostAsync } from '../../../../actions/remove-post-async'
 import { ROLE } from '../../../../constants/role'
 import { checkAccess } from '../../../../utils/check-access'
 import { selectUserRole } from '../../../../selectors/select-user-role'
+import PropTypes from 'prop-types'
 
 const SpecialPanelContainer = ({ className, id, publishedAt, editButton }) => {
 	const dispatch = useDispatch()

@@ -3,6 +3,7 @@ import { H2 } from '../../../../components/h2/h2'
 import { Icon } from '../../../../components/icon/icon'
 import { SpecialPanel } from '../special-panel/special-panel'
 import { useNavigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const PostContentContainer = ({
 	className,

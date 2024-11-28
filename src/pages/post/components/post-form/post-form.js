@@ -61,6 +61,7 @@ const PostFormContainer = ({
 				editButton={
 					<Icon
 						id='fa-floppy-o'
+						margin='0 10px 0 0'
 						size='21px'
 						onClick={onSave}
 					/>

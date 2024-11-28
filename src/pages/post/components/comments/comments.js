@@ -6,36 +6,43 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectUserId } from '../../../../selectors/select-user-id'
 import { useServerRequest } from '../../../../hooks/use-server-request'
 import { addCommentAsync } from '../../../../actions/add-comment-async'
+import { selectUserRole } from '../../../../selectors/select-user-role'
+import { ROLE } from '../../../../constants/role'
 
 const CommentsContainer = ({ className, comments, postId }) => {
 	const [newComment, setNewComment] = useState('')
 
+	const userId = useSelector(selectUserId)
+	const userRole = useSelector(selectUserRole)
+
 	const requestServer = useServerRequest()
 
 	const dispatch = useDispatch()
-
-	const userId = useSelector(selectUserId)
 
 	const onNewCommentAdd = (userId, postId, content) => {
 		dispatch(addCommentAsync(requestServer, userId, postId, content))
 		setNewComment('')
 	}
 
+	const isGuest = userRole === ROLE.GUEST
+
 	return (
 		<div className={className}>
-			<div className='new-comment'>
-				<textarea
-					name='comment'
-					value={newComment}
-					placeholder='Комментарий...'
-					onChange={({ target }) => setNewComment(target.value)}></textarea>
-				<Icon
-					id='fa-paper-plane-o'
-					margin='0px 0px 0px 10px'
-					size='21px'
-					onClick={() => onNewCommentAdd(userId, postId, newComment)}
-				/>
-			</div>
+			{!isGuest && (
+				<div className='new-comment'>
+					<textarea
+						name='comment'
+						value={newComment}
+						placeholder='Комментарий...'
+						onChange={({ target }) => setNewComment(target.value)}></textarea>
+					<Icon
+						id='fa-paper-plane-o'
+						margin='0px 0px 0px 10px'
+						size='21px'
+						onClick={() => onNewCommentAdd(userId, postId, newComment)}
+					/>
+				</div>
+			)}
 			<div className='comments'>
 				{comments.map(({ id, author, content, publishedAt }) => (
 					<Comment

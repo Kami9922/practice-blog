@@ -12,11 +12,14 @@ import { RESET_POST_DATA } from '../../actions/reset-post-data'
 import { Error } from '../../components/error/error'
 import { PrivateContent } from '../../components/private-content/private-content'
 import { ROLE } from '../../constants/role'
+import { selectUserRole } from '../../selectors/select-user-role'
 
 const PostContainer = ({ className }) => {
 	const [error, setError] = useState(null)
 	const [isLoading, setIsLoading] = useState(true)
+
 	const post = useSelector(selectPost)
+
 	const dispatch = useDispatch()
 	const params = useParams()
 	const isEditing = !!useMatch('/post/:id/edit')

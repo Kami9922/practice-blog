@@ -1,7 +1,7 @@
-import { addComment, getComments, getPost } from '../api/index'
+import { addComment, getPost } from '../api/index'
 import { ROLE } from '../constants/role'
 import { sessions } from '../sessions'
-
+import { getPostCommentsWithAuthor } from '../utils/get-post-comments-with-author'
 export const addPostComment = async (hash, userId, postId, content) => {
 	const accessRoles = [ROLE.ADMIN, ROLE.MODERATOR, ROLE.READER]
 
@@ -18,13 +18,13 @@ export const addPostComment = async (hash, userId, postId, content) => {
 
 	const post = await getPost(postId)
 
-	const comments = await getComments(postId)
+	const commentsWithAuthor = await getPostCommentsWithAuthor(postId)
 
 	return {
 		error: null,
 		res: {
 			...post,
-			comments,
+			comments: commentsWithAuthor,
 		},
 	}
 }

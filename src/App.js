@@ -12,6 +12,8 @@ import { useDispatch } from 'react-redux'
 import { setUser } from './actions/set-user'
 import { Modal } from './components/modal/modal'
 import { Main } from './pages/main/main'
+import { Error } from './components/error/error'
+import { ERROR } from './constants/error'
 
 const AppColumn = styled.div`
 	display: flex;
@@ -85,7 +87,7 @@ const App = () => {
 					/>
 					<Route
 						path='*'
-						element={<div>Ошибка</div>}
+						element={<Error error={ERROR.PAGE_NOT_EXIST} />}
 					/>
 				</Routes>
 			</Page>

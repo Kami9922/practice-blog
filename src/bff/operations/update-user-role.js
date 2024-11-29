@@ -1,4 +1,4 @@
-import { selectUserRole } from '../../selectors/select-user-role'
+import { setUserRole } from '../api/set-user-role'
 import { ROLE } from '../constants/role'
 import { sessions } from '../sessions'
 
@@ -14,7 +14,7 @@ export const updateUserRole = async (hash, userId, newUserRoleId) => {
 		}
 	}
 
-	selectUserRole(userId, newUserRoleId)
+	setUserRole(userId, newUserRoleId)
 
 	return {
 		error: null,

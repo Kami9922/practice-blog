@@ -18,7 +18,7 @@
       "login": "Ivan2",
       "password": "123456",
       "registered_at": "1970-01-25 17:33",
-      "role_id": 2,
+      "role_id": 1,
       "id": "oTrugjF"
     }
   ],
@@ -527,6 +527,17 @@
         "roleId": 0
       },
       "id": 35
+    },
+    {
+      "hash": "0.25351461608302727768204931635409593582153320312500",
+      "user": {
+        "id": "fQIFz_q",
+        "login": "Ivan4",
+        "password": "123456",
+        "registeredAt": "1970-01-31 18:46",
+        "roleId": 0
+      },
+      "id": 36
     }
   ]
 }

@@ -24,3 +24,6 @@ export const TableRow = styled(TableRowContainer)`
 		width: auto;
 	}
 `
+TableRow.propTypes = {
+	children: PropTypes.node.isRequired,
+}

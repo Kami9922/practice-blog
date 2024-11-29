@@ -9,6 +9,7 @@ import { addCommentAsync } from '../../../../actions/add-comment-async'
 import { selectUserRole } from '../../../../selectors/select-user-role'
 import { ROLE } from '../../../../constants/role'
 import PropTypes from 'prop-types'
+import { PROP_TYPE } from '../../../../constants/prop-type'
 
 const CommentsContainer = ({ className, comments, postId }) => {
 	const [newComment, setNewComment] = useState('')
@@ -77,3 +78,7 @@ export const Comments = styled(CommentsContainer)`
 		width: 550px;
 	}
 `
+Comments.propTypes = {
+	comments: PropTypes.arrayOf(PROP_TYPE.COMMENT).isRequired,
+	postId: PropTypes.string.isRequired,
+}

@@ -58,5 +58,5 @@ export const Pagination = styled(PaginationContainer)`
 Pagination.propTypes = {
 	page: PropTypes.number.isRequired,
 	lastPage: PropTypes.number.isRequired,
-	setpage: PropTypes.func.isRequired,
+	setPage: PropTypes.func.isRequired,
 }

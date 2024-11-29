@@ -97,3 +97,10 @@ export const Comment = styled(CommentContainer)`
 		display: flex;
 	}
 `
+Comment.propTypes = {
+	postId: PropTypes.string.isRequired,
+	id: PropTypes.number.isRequired,
+	author: PropTypes.string.isRequired,
+	publishedAt: PropTypes.string.isRequired,
+	content: PropTypes.string.isRequired,
+}

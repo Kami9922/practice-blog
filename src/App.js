@@ -28,9 +28,6 @@ const AppColumn = styled.div`
 const Page = styled.div`
 	padding: 120px 0 20px;
 `
-// const H2 = styled.h2`
-// 	text-align: center;
-// `
 
 const App = () => {
 	const dispatch = useDispatch()

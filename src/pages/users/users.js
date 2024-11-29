@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { H2 } from '../../components/h2/h2'
-// import { useDispatch } from 'react-redux'
 import { UserRow } from './components/user-row/user-row'
 import { TableRow } from './components/table-row/table-row'
 import { useServerRequest } from '../../hooks/use-server-request'

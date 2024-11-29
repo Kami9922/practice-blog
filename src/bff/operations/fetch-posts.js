@@ -6,8 +6,7 @@ export const fetchPosts = async (searchPhrase, page, limit) => {
 		getPosts(searchPhrase, page, limit),
 		getComments(),
 	])
-	// const posts = await getPosts()
-	// const comments = await getComments()
+
 	return {
 		error: null,
 		res: {

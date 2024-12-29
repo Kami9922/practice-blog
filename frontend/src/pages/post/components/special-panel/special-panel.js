@@ -10,6 +10,7 @@ import { ROLE } from '../../../../constants/role'
 import { checkAccess } from '../../../../utils/check-access'
 import { selectUserRole } from '../../../../selectors/select-user-role'
 import PropTypes from 'prop-types'
+import { formatDate } from '../../../../utils/format-date'
 
 const SpecialPanelContainer = ({ className, id, publishedAt, editButton }) => {
 	const dispatch = useDispatch()
@@ -44,7 +45,7 @@ const SpecialPanelContainer = ({ className, id, publishedAt, editButton }) => {
 						size='18px'
 					/>
 				)}
-				{publishedAt}
+				{formatDate(publishedAt)}
 			</div>
 			{isAdmin && (
 				<div className='buttons'>

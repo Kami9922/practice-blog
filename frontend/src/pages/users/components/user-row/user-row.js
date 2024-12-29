@@ -6,6 +6,7 @@ import { TableRow } from '../table-row/table-row'
 import PropTypes from 'prop-types'
 import { PROP_TYPE } from '../../../../constants/prop-type'
 import { request } from '../../../../utils/request'
+import { formatDate } from '../../../../utils/format-date'
 
 const UserRowContainer = ({
 	className,
@@ -35,7 +36,7 @@ const UserRowContainer = ({
 		<div className={className}>
 			<TableRow border={true}>
 				<div className='login-column'>{login}</div>
-				<div className='registered-at-column'>{registeredAt}</div>
+				<div className='registered-at-column'>{formatDate(registeredAt)}</div>
 				<div className='role-column'>
 					<select
 						value={selectedRoleId}

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Icon } from '../../../../components/icon/icon'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { formatDate } from '../../../../utils/format-date'
 
 const PostCardContainer = ({
 	className,
@@ -29,7 +30,7 @@ const PostCardContainer = ({
 								margin='0px 10px 0px 0px'
 								size='18px'
 							/>
-							{publishedAt}
+							{formatDate(publishedAt)}
 						</div>
 						<div className='comments-count'>
 							<Icon

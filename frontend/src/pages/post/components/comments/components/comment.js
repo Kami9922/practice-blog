@@ -7,6 +7,7 @@ import { openModal } from '../../../../../actions/open-modal'
 import { selectUserRole } from '../../../../../selectors/select-user-role'
 import { ROLE } from '../../../../../constants/role'
 import PropTypes from 'prop-types'
+import { formatDate } from '../../../../../utils/format-date'
 
 const CommentContainer = ({
 	className,
@@ -55,7 +56,7 @@ const CommentContainer = ({
 							margin='0px 10px 0px 0px'
 							size='18px'
 						/>
-						{publishedAt}
+						{formatDate(publishedAt)}
 					</div>
 				</div>
 				<div className='comment-text'>{content}</div>

@@ -61,6 +61,7 @@ const UserRowContainer = ({
 				</div>
 			</TableRow>
 			<Icon
+				className='remove-user'
 				id='fa-trash-o'
 				margin='0px 0px 0px 10px'
 				onClick={onUserRemove}
@@ -72,6 +73,11 @@ const UserRowContainer = ({
 export const UserRow = styled(UserRowContainer)`
 	display: flex;
 	margin-top: 10px;
+
+	& .remove-user {
+		display: flex;
+		align-self: center;
+	}
 
 	& select {
 		font-size: 16px;

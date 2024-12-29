@@ -38,14 +38,16 @@ const SpecialPanelContainer = ({ className, id, publishedAt, editButton }) => {
 		<div className={className}>
 			<div className='published-at'>
 				{publishedAt && (
-					<Icon
-						inactive={true}
-						id='fa-calendar-o'
-						margin='0px 10px 0px 0px'
-						size='18px'
-					/>
+					<>
+						<Icon
+							inactive={true}
+							id='fa-calendar-o'
+							margin='0px 10px 0px 0px'
+							size='18px'
+						/>
+						{formatDate(publishedAt)}
+					</>
 				)}
-				{formatDate(publishedAt)}
 			</div>
 			{isAdmin && (
 				<div className='buttons'>

@@ -31,7 +31,6 @@ const UsersContainer = ({ className }) => {
 				}
 
 				setUsers(usersRes.data)
-				console.log(usersRes.data)
 
 				setRoles(rolesRes.data)
 			}
